@@ -6,10 +6,14 @@ function updateSceneMargin(val) {
   });
 }
 
-function drawScene(nowUTC,sRiseUTC,sSetUTC){
+function drawScene(){
   // Constants used in time calculation(minutes*seconds)
   const outerMargin = 90*60;;
   const innerMargin = 30*60;
+
+  var nowUTC = Math.floor((new Date()).getTime() / 1000);
+  var sRiseUTC = root.weatherData.sys.sunrise;
+  var sSetUTC = root.weatherData.sys.sunset;
 
   // CSS Filter to simulate day-night cycle
   if (nowUTC < sRiseUTC-outerMargin || nowUTC >= sSetUTC+outerMargin){

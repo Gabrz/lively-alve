@@ -82,29 +82,9 @@ const languages = [
   {language: "Vietnamese", locale: "vi-VN", units: "metric" },
 ];
 
-function draw(init) {
-
-  var dt = new Date;
-  drawDate(dt);
-
-  // Update weather every interval
-  if (init || (dt.getSeconds()==0 && (Math.floor(dt.getTime() / 1000)%(root.weatherRefreshRate*60))==0)) {
-    getWeather();
-  }
-
-  // Update scene every minute
-  if (dt.getSeconds()==0 || init) {
-    drawScene(
-      Math.floor(dt.getTime() / 1000),
-      root.weatherData.sys.sunrise,
-      root.weatherData.sys.sunset);
-  }
-}
-
-function main(){
-  draw(false);
-  weatherCorrScene();
-}
-
-draw(true)
-setInterval(main, 1000);
+drawDate();
+getWeather();
+drawScene();
+setInterval(drawDate, 1000);
+setInterval(getWeather, root.weatherRefreshRate*60*1000);
+setInterval(drawScene, 60*1000);

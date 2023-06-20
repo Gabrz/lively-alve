@@ -3,7 +3,8 @@ const dateDay = document.getElementById("dateDay");
 const dateMonthDayYear = document.getElementById("dateMonthDayYear");
 const dateTime = document.getElementById("dateTime");
 
-function drawDate(dt) {
+function drawDate() {
+  dt = new Date();
   dateTime.textContent = dt.toLocaleTimeString(root.locale.locale,{hour12: root.hour12, hour: "2-digit", minute:"2-digit" }).substring(0,5);
   dateMonthDayYear.textContent = dt.toLocaleString(root.locale.locale, {month: "long"}) + " " + dt.getDate() + ", " + dt.getFullYear();
   dateDay.textContent = dt.toLocaleString(root.locale.locale, {weekday: "long"});
