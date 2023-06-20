@@ -38,11 +38,11 @@ function livelyPropertyListener(name, val) {
     case "miscHour12":
       // set hour format
       root.hour12 = val;
-      drawDate(new Date);
+      drawDate();
       break;
     case "miscLanguage":
       root.locale = languages[val];
-      drawDate(new Date);
+      drawDate();
       getWeather();
       break;
     case "miscSunrise":
@@ -64,9 +64,5 @@ function livelyPropertyListener(name, val) {
 
 function reDrawWeatherScene(){
   getWeather();
-  drawScene(
-    Math.floor((new Date).getTime() / 1000),
-    root.weatherData.sys.sunrise,
-    root.weatherData.sys.sunset
-    );
+  drawScene();
 }
