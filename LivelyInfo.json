@@ -1,0 +1,12 @@
+{
+  "AppVersion": "1.0.0.0",
+  "Title": "Alve's Town",
+  "Thumbnail": "thumbnail.jpg",
+  "Preview": "preview.gif",
+  "Desc": "Alve's Town: Pixelart city view with realtime day-night cycle",
+  "Author": "Gabrz",
+  "License": "",
+  "Contact": "https://github.com/gabrz/lively-alve",
+  "Type": 1,
+  "FileName": "index.html"
+}
