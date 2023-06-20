@@ -86,5 +86,5 @@ drawDate();
 getWeather();
 drawScene();
 setInterval(drawDate, 1000);
-setInterval(getWeather, root.weatherRefreshRate*60*1000);
+var weatherInterval = setInterval(getWeather, root.weatherRefreshRate*60*1000);
 setInterval(drawScene, 60*1000);

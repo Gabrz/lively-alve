@@ -30,6 +30,9 @@ function livelyPropertyListener(name, val) {
       break;
     case "weatherRefreshFreq":
       root.weatherRefreshRate = val;
+      clearInterval(weatherInterval);
+      getWeather();
+      weatherInterval = setInterval(getWeather, root.weatherRefreshRate*60*1000);
       break;
     case "weatherBtnRefresh":
       // update weather and redraw scene
