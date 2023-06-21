@@ -130,3 +130,13 @@ function weatherCorrScene() {
   document.getElementById("sceneS1").style.visibility = vis1;
   document.getElementById("sceneS2").style.visibility = vis2;
 }
+
+// Switch animation on or off. (GIF seems to take up a lot of CPU)
+function enableAnimation(b){
+  var ext = b ? "gif" : "png";
+  document.getElementById("sceneC1").src = "assets/images/scene/scene_city_1."+ext;
+  document.getElementById("sceneC2").src = "assets/images/scene/scene_city_2."+ext;
+  document.getElementById("sceneS").src = "assets/images/scene/scene_sign."+ext;
+
+  document.getElementsByTagName("body")[0].style.backgroundImage = "url(assets/images/scene/body_background."+ext+")";
+}
