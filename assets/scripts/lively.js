@@ -5,6 +5,9 @@ function livelyPropertyListener(name, val) {
       positionWeatherContainer(-val);
       updateSceneMargin(-val);
       break;
+    case "sceneAnimation":
+      enableAnimation(val);
+      break;
     case "sceneColor":
       dateContainer.style.color = val;
       weatherContainer.style.color = val;
